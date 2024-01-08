@@ -1,0 +1,13 @@
+<div class="row">
+    <div class="col-xs-10">
+        <app-usage-type-edit></app-usage-type-edit>
+        <hr>
+        <ul class="list-group">
+            <a class="list-group-item" style="cursor: pointer" *ngFor="let record of records; "
+                (click)="onEditItem(record.usageTypeCode)">
+                <span class="fw-bold">ID:</span> {{ record.usageTypeCode}} - <span class="fw-bold">Code:</span> {{
+                record.usageId}} - <span class="fw-bold"> Description:</span> {{ record.usageDescr }}
+            </a>
+        </ul>
+    </div>
+</div>

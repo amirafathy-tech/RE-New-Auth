@@ -1,0 +1,12 @@
+<div class="row">
+    <div class="col-xs-10">
+       <app-unit-orientation-edit> </app-unit-orientation-edit>
+        <hr>
+        <ul class="list-group">
+            <a class="list-group-item" style="cursor: pointer" *ngFor="let record of records; "
+                (click)="onEditItem(record.unitOrientationCode)">
+                <span class="fw-bold">ID:</span> {{ record.unitOrientationCode}} - <span class="fw-bold">Code:</span> {{ record.orientationId}} - <span class="fw-bold"> Description:</span> {{ record.orientationDescr }}
+            </a>
+        </ul>
+    </div>
+</div>

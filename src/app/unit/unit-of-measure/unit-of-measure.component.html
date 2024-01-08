@@ -1,0 +1,13 @@
+<div class="row">
+    <div class="col-xs-10">
+        <app-unit-of-measure-edit></app-unit-of-measure-edit>
+        <hr>
+        <ul class="list-group">
+            <a class="list-group-item" style="cursor: pointer" *ngFor="let record of records; "
+                (click)="onEditItem(record.measurementCode)">
+                <span class="fw-bold">ID:</span> {{ record.measurementCode}} - <span class="fw-bold">Code:</span> {{
+                record.uomID}} - <span class="fw-bold"> Description:</span> {{ record.uomDescr }}
+            </a>
+        </ul>
+    </div>
+</div>

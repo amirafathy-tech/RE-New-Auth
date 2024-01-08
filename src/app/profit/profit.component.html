@@ -1,0 +1,12 @@
+<div class="row">
+    <div class="col">
+     <app-profit-edit></app-profit-edit>
+        <hr>
+        <ul class="list-group">
+            <a class="list-group-item" style="cursor: pointer" *ngFor="let record of records; "
+                (click)="onEditItem(record.profitCode)">
+                <span class="fw-bold">ID:</span> {{ record.profitCode}} - <span class="fw-bold">Code:</span> {{ record.profitId}} - <span class="fw-bold"> Description:</span> {{ record.profitDescr }}
+            </a>
+        </ul>
+    </div>
+</div>
