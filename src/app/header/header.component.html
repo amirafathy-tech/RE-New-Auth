@@ -16,39 +16,35 @@
       </div>
       <div class="offcanvas-body">
         <ul class="navbar-nav justify-content-end flex-grow-1 pe-3">
-          <li class="nav-item" *ngIf="!isAuthenticated">
+          <li class="nav-item" *ngIf="isAuthenticated">
             <a class="nav-link active" aria-current="page" routerLink="/model">Home</a>
           </li>
           <!-- <li class="nav-item">
             <a class="nav-link active" aria-current="page" routerLink="/payment">Payment</a>
           </li> -->
-          <li class="nav-item">
+          <!-- <li class="nav-item">
             <a class="nav-link" routerLink="/auth">Login</a>
-          </li>
-          <li class="nav-item" *ngIf="!isAuthenticated">
+          </li> -->
+          <li class="nav-item" *ngIf="isAuthenticated">
             <a class="nav-link" routerLink="/company">Company</a>
           </li>
-          <li class="nav-item" *ngIf="!isAuthenticated">
+          <li class="nav-item" *ngIf="isAuthenticated">
             <a class="nav-link" routerLink="/city">Location</a>
           </li>
-          <li class="nav-item" *ngIf="!isAuthenticated">
+          <li class="nav-item" *ngIf="isAuthenticated">
             <a class="nav-link" routerLink="/area">Area Details</a>
           </li>
 
-          <li class="nav-item dropdown" *ngIf="!isAuthenticated">
+          <li class="nav-item dropdown" *ngIf="isAuthenticated">
             <a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">
               Project
             </a>
             <ul class="dropdown-menu">
               <li><a class="dropdown-item" routerLink="/project">Projects</a></li>
               <li><a class="dropdown-item" routerLink="/project-area">Project Area</a></li>
-              <!-- <li>
-                <hr class="dropdown-divider">
-              </li>
-              <li><a class="dropdown-item" href="#">Something else here</a></li> -->
             </ul>
           </li>
-          <li class="nav-item dropdown" *ngIf="!isAuthenticated">
+          <li class="nav-item dropdown" *ngIf="isAuthenticated">
             <a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">
               Building
             </a>
@@ -59,7 +55,7 @@
             </ul>
           </li>
 
-          <li class="nav-item dropdown" *ngIf="!isAuthenticated">
+          <li class="nav-item dropdown" *ngIf="isAuthenticated">
             <a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">
               Unit
             </a>
@@ -76,14 +72,21 @@
               <li><a class="dropdown-item" routerLink="/unit-area">Unit Area </a></li>
             </ul>
           </li>
-          <li class="nav-item" *ngIf="!isAuthenticated">
+          <li class="nav-item" *ngIf="isAuthenticated">
             <a class="nav-link" routerLink="/profit">Profit</a>
           </li>
         </ul>
         <ul class="navbar-nav justify-content-end flex-grow-1 pe-3">
-          <li>
-            <a style="cursor: pointer;" (click)="onLogout()">Logout</a>
-          </li>
+          <ng-container *ngIf="isAuthenticated; else loginLink">
+            <li class="nav-item">
+              <a class="nav-link" style="cursor: pointer;" (click)="onLogout()">Logout</a>
+            </li>
+          </ng-container>
+          <ng-template #loginLink>
+            <li class="nav-item">
+              <a class="nav-link" routerLink="/auth">Login</a>
+            </li>
+          </ng-template>
         </ul>
       </div>
     </div>
