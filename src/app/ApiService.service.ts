@@ -1,6 +1,7 @@
 import { HttpClient, HttpHeaders, HttpParams } from '@angular/common/http';
 import { Observable } from 'rxjs';
 import { Injectable } from '@angular/core';
+import { AuthService } from './auth/auth.service';
 
 @Injectable({
   providedIn: 'root'
@@ -8,7 +9,7 @@ import { Injectable } from '@angular/core';
 export class ApiService {
   private baseUrl = 'https://dev.c15b19b.kyma.ondemand.com';
 
-  constructor(private http: HttpClient) { }
+  constructor(private http: HttpClient,private authService:AuthService) { }
 
   get<T>(url: string, params?: HttpParams, headers?: HttpHeaders): Observable<T> {
     const options = { params, headers };

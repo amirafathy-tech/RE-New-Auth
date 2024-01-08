@@ -28,6 +28,7 @@ import { ShellbarSidebarComponent } from './shellbar/shellbar.component';
 import { ModelComponent } from './model/model.component';
 import { CommonModule } from '@angular/common';
 import { AboutComponent } from './about/about.component';
+import { AuthComponent } from './auth/auth.component';
 
 const appRoutes: Routes = [
   { path: 'home', component: HomeComponent },
@@ -64,6 +65,7 @@ const appRoutes: Routes = [
   //   ]
   // },
   { path: 'model', component: ModelComponent },
+  { path: 'auth', component: AuthComponent }
   
 ];
 

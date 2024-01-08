@@ -122,6 +122,7 @@ import { AuthComponent } from './auth/auth.component';
     ShellbarSidebarComponent,
     AboutComponent,
     FooterComponent,
+    LoadingSpinnerComponent,
     AuthComponent
   ],
 
