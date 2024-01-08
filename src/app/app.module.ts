@@ -64,6 +64,7 @@ import { NgHttpLoaderModule } from 'ng-http-loader';
 import { ModelComponent } from './model/model.component';
 import { AboutComponent } from './about/about.component';
 import { FooterComponent } from './footer/footer.component';
+import { AuthComponent } from './auth/auth.component';
 
 @NgModule({
   declarations: [
@@ -120,7 +121,8 @@ import { FooterComponent } from './footer/footer.component';
     ModelComponent,
     ShellbarSidebarComponent,
     AboutComponent,
-    FooterComponent
+    FooterComponent,
+    AuthComponent
   ],
 
   imports: [
