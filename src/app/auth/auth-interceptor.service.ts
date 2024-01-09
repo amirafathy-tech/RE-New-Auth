@@ -1,28 +1,30 @@
-import { HttpEvent, HttpHandler, HttpInterceptor, HttpRequest } from '@angular/common/http';
 import { Injectable } from '@angular/core';
+import {
+  HttpInterceptor,
+  HttpRequest,
+  HttpHandler,
+  HttpParams
+} from '@angular/common/http';
+import { take, exhaustMap } from 'rxjs/operators';
 
-import { Router } from '@angular/router';
-import { Observable } from 'rxjs';
+import { AuthService } from './auth.service';
 
 @Injectable()
-export class CustomHttpInterceptor implements HttpInterceptor {
-    constructor(private router: Router) { }
-    intercept(req: HttpRequest<any>, next: HttpHandler): Observable<HttpEvent<any>> {
-    
+export class AuthInterceptorService implements HttpInterceptor {
+  constructor(private authService: AuthService) {}
 
-        let obj = JSON.parse(localStorage.getItem('token'))
-
-        if (obj != null) {
-            req = req.clone({
-                setHeaders: { 'Authorization': obj.value }
-            });
+  intercept(req: HttpRequest<any>, next: HttpHandler) {
+    return this.authService.user.pipe(
+      take(1),
+      exhaustMap(user => {
+        if (!user) {
+          return next.handle(req);
         }
-        else {
-            if (req.url != 'login') {
-                this.router.navigate(['login']);
-                return;
-            }
-        }
-        return next.handle(req);
-    }
+        const modifiedReq = req.clone({
+          params: new HttpParams().set('auth', user.token)
+        });
+        return next.handle(modifiedReq);
+      })
+    );
+  }
 }

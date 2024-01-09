@@ -29,33 +29,35 @@ import { ModelComponent } from './model/model.component';
 import { CommonModule } from '@angular/common';
 import { AboutComponent } from './about/about.component';
 import { AuthComponent } from './auth/auth.component';
+import { AuthGuard } from './auth/auth.guard';
 
 const appRoutes: Routes = [
-  { path: 'home', component: HomeComponent },
-  { path: 'city', component: CityComponent },
-  { path: 'company', component: CompanyComponent },
-  { path: '', component: AboutComponent },
-  { path: 'payment', component: PaymentComponent },
-  { path: 'area', component: AreaComponent },
-  { path: 'building', component: BuildingComponent },
-  { path: 'building-type', component: BuildingTypeComponent },
-  { path: 'building-area', component: BuildingAreaComponent },
-  { path: 'project', component: ProjectComponent },
-  { path: 'project-area', component: ProjectAreaComponent },
-  { path: 'profit', component: ProfitComponent },
-  { path: 'currency', component: CurrencyComponent },
-  { path: 'moc', component: MethodOfCalcComponent },
-  { path: 'price-type', component: PriceTypeComponent },
-  { path: 'unit', component: UnitComponent },
-  { path: 'unit-view', component: UnitViewComponent },
-  { path: 'unit-status', component: UnitStatusComponent },
-  { path: 'unit-floor', component: UnitFloorComponent },
-  { path: 'uom', component: UnitOfMeasureComponent },
-  { path: 'unit-usagetype', component: UsageTypeComponent },
-  { path: 'unit-subtype', component: UnitSubTypeComponent },
-  { path: 'unit-orientation', component: UnitOrientationComponent },
-  { path: 'unit-fixture', component: UnitFixtureComponent },
-  { path: 'unit-area', component: UnitAreaComponent },
+  
+  { path: 'city', canActivate: [AuthGuard],component: CityComponent },
+  { path: 'company', canActivate: [AuthGuard],component: CompanyComponent },
+  { path: '', component: AuthComponent },
+  { path: 'about', component: AboutComponent },
+  { path: 'payment', canActivate: [AuthGuard],component: PaymentComponent },
+  { path: 'area', canActivate: [AuthGuard],component: AreaComponent },
+  { path: 'building', canActivate: [AuthGuard],component: BuildingComponent },
+  { path: 'building-type', canActivate: [AuthGuard],component: BuildingTypeComponent },
+  { path: 'building-area', canActivate: [AuthGuard],component: BuildingAreaComponent },
+  { path: 'project', canActivate: [AuthGuard],component: ProjectComponent },
+  { path: 'project-area',canActivate: [AuthGuard], component: ProjectAreaComponent },
+  { path: 'profit', canActivate: [AuthGuard],component: ProfitComponent },
+  { path: 'currency', canActivate: [AuthGuard],component: CurrencyComponent },
+  { path: 'moc', canActivate: [AuthGuard],component: MethodOfCalcComponent },
+  { path: 'price-type', canActivate: [AuthGuard],component: PriceTypeComponent },
+  { path: 'unit',canActivate: [AuthGuard], component: UnitComponent },
+  { path: 'unit-view',canActivate: [AuthGuard], component: UnitViewComponent },
+  { path: 'unit-status',canActivate: [AuthGuard], component: UnitStatusComponent },
+  { path: 'unit-floor', canActivate: [AuthGuard],component: UnitFloorComponent },
+  { path: 'uom', canActivate: [AuthGuard],component: UnitOfMeasureComponent },
+  { path: 'unit-usagetype',canActivate: [AuthGuard], component: UsageTypeComponent },
+  { path: 'unit-subtype',canActivate: [AuthGuard], component: UnitSubTypeComponent },
+  { path: 'unit-orientation', canActivate: [AuthGuard],component: UnitOrientationComponent },
+  { path: 'unit-fixture',canActivate: [AuthGuard], component: UnitFixtureComponent },
+  { path: 'unit-area', canActivate: [AuthGuard],component: UnitAreaComponent },
   // {
   //   path: 'unit',
   //   component: UnitComponent,
@@ -64,7 +66,7 @@ const appRoutes: Routes = [
   //     { path: 'unit-fixture', component: UnitFixtureComponent },
   //   ]
   // },
-  { path: 'model', component: ModelComponent },
+  { path: 'home', canActivate: [AuthGuard],component: ModelComponent },
   { path: 'auth', component: AuthComponent }
   
 ];

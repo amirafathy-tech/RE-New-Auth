@@ -7,12 +7,16 @@ import { AuthService } from './auth/auth.service';
   providedIn: 'root'
 })
 export class ApiService {
-  private baseUrl = 'https://dev.c15b19b.kyma.ondemand.com';
+  private baseUrl = 'https://dev.c-8339c63.kyma.ondemand.com';
 
   constructor(private http: HttpClient,private authService:AuthService) { }
 
   get<T>(url: string, params?: HttpParams, headers?: HttpHeaders): Observable<T> {
     const options = { params, headers };
+    console.log(options);
+    
+    console.log(this.http.get<T>(`${this.baseUrl}/${url}`, options));
+    
     return this.http.get<T>(`${this.baseUrl}/${url}`, options);
   }
   getID<T>(url: string, id: number, params?: HttpParams, headers?: HttpHeaders): Observable<T> {

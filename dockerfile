@@ -18,5 +18,5 @@ RUN npm run build
 
 
 # Expose the default HTTP port
-EXPOSE 8082
+EXPOSE 8080
 CMD ng serve --host=0.0.0.0  --disable-host-check 
