@@ -68,7 +68,4 @@ export class UnitAreaEditComponent {
   ngOnDestroy() {
     this.subscription.unsubscribe();
   }
-
-
-
 }

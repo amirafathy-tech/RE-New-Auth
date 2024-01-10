@@ -4,7 +4,6 @@ export class UnitOrientation{
     constructor(orientationId:string,orientationDescr:string){
         this.orientationId=orientationId;
         this.orientationDescr=orientationDescr;
-        
     }
     
 }

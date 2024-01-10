@@ -6,7 +6,6 @@ import { Subscription } from 'rxjs/internal/Subscription';
 @Component({
   selector: 'app-unit-sub-type',
   templateUrl: './unit-sub-type.component.html',
-  // styleUrl: './unit-sub-type.component.css',
   providers: [UnitSubTypeService]
 })
 export class UnitSubTypeComponent {

@@ -7,7 +7,6 @@ import { UnitOrientationService } from '../unit-orientation.sevice';
 @Component({
   selector: 'app-unit-orientation-edit',
   templateUrl: './unit-orientation-edit.component.html',
-  //styleUrl: './unit-orientation-edit.component.css'
 })
 export class UnitOrientationEditComponent {
 

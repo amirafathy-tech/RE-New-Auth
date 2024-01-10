@@ -4,7 +4,6 @@ export class UnitFixture{
     constructor(fixtureId:string,fixtureDescr:string){
         this.fixtureId=fixtureId;
         this.fixtureDescr=fixtureDescr;
-        
     }
     
 }

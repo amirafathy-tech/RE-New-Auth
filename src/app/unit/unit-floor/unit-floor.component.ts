@@ -6,7 +6,6 @@ import { Subscription } from 'rxjs/internal/Subscription';
 @Component({
   selector: 'app-unit-floor',
   templateUrl: './unit-floor.component.html',
-  // styleUrl: './unit-floor.component.css',
   providers: [UnitFloorService]
 })
 export class UnitFloorComponent {

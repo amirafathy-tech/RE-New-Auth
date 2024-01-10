@@ -7,7 +7,6 @@ import { UnitFloorService } from '../unit-floor.service';
 @Component({
   selector: 'app-unit-floor-edit',
   templateUrl: './unit-floor-edit.component.html',
-  //styleUrl: './unit-floor-edit.component.css'
 })
 export class UnitFloorEditComponent {
 

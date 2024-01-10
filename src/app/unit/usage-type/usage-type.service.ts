@@ -1,5 +1,4 @@
 import { Injectable } from '@angular/core';
-
 import { Subject } from 'rxjs';
 import { UsageType } from './usage-type.model';
 import { ApiService } from 'src/app/ApiService.service';

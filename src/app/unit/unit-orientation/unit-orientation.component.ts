@@ -6,7 +6,6 @@ import { Subscription } from 'rxjs/internal/Subscription';
 @Component({
   selector: 'app-unit-orientation',
   templateUrl: './unit-orientation.component.html',
- // styleUrl: './unit-orientation.component.css',
   providers: [UnitOrientationService]
 })
 export class UnitOrientationComponent {

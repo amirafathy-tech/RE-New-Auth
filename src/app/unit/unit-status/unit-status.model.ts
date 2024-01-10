@@ -4,7 +4,6 @@ export class UnitStatus{
     constructor(statusId:string,statusDescr:string){
         this.statusId=statusId;
         this.statusDescr=statusDescr;
-        
     }
     
 }

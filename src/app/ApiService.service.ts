@@ -14,11 +14,11 @@ export class ApiService {
   get<T>(url: string, params?: HttpParams, headers?: HttpHeaders): Observable<T> {
     const options = { params, headers };
     console.log(options);
-    
     console.log(this.http.get<T>(`${this.baseUrl}/${url}`, options));
     
     return this.http.get<T>(`${this.baseUrl}/${url}`, options);
   }
+  
   getID<T>(url: string, id: number, params?: HttpParams, headers?: HttpHeaders): Observable<T> {
     const options = { params, headers };
     console.log(this.http.get<T>(`${this.baseUrl}/${url}/${id}`, options));

@@ -58,14 +58,6 @@ const appRoutes: Routes = [
   { path: 'unit-orientation', canActivate: [AuthGuard],component: UnitOrientationComponent },
   { path: 'unit-fixture',canActivate: [AuthGuard], component: UnitFixtureComponent },
   { path: 'unit-area', canActivate: [AuthGuard],component: UnitAreaComponent },
-  // {
-  //   path: 'unit',
-  //   component: UnitComponent,
-  //   children: [
-  //     { path: 'unit-orientation', component: UnitOrientationComponent},
-  //     { path: 'unit-fixture', component: UnitFixtureComponent },
-  //   ]
-  // },
   { path: 'home', canActivate: [AuthGuard],component: ModelComponent },
   { path: 'auth', component: AuthComponent }
   

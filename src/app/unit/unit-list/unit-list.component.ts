@@ -19,7 +19,6 @@ import { ApiService } from 'src/app/ApiService.service';
 @Component({
   selector: 'app-unit-list',
   templateUrl: './unit-list.component.html',
-  // styleUrl: './unit-list.component.css'
 })
 export class UnitListComponent implements OnInit {
   closeResult: string;

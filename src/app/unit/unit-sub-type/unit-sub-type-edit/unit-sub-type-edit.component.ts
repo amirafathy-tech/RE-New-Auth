@@ -7,9 +7,9 @@ import { UnitSubTypeService } from '../unit-sub-type.service';
 @Component({
   selector: 'app-unit-sub-type-edit',
   templateUrl: './unit-sub-type-edit.component.html',
-  // styleUrl: './unit-sub-type-edit.component.css'
 })
 export class UnitSubTypeEditComponent {
+  
   @ViewChild('f', { static: false }) slForm: NgForm;
   subscription: Subscription;
   editMode = false;

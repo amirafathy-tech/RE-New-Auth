@@ -6,7 +6,6 @@ import { UnitStatus } from './unit-status.model';
 @Component({
   selector: 'app-unit-status',
   templateUrl: './unit-status.component.html',
-  // styleUrl: './unit-status.component.css',
   providers: [UnitStatusService]
 })
 export class UnitStatusComponent {

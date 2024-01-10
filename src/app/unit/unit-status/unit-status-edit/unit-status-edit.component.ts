@@ -7,7 +7,6 @@ import { UnitStatusService } from '../unit-status.service';
 @Component({
   selector: 'app-unit-status-edit',
   templateUrl: './unit-status-edit.component.html',
- // styleUrl: './unit-status-edit.component.css'
 })
 export class UnitStatusEditComponent {
 

@@ -6,7 +6,6 @@ import { UnitOfMeasure } from './unit-of-measure.model';
 @Component({
   selector: 'app-unit-of-measure',
   templateUrl: './unit-of-measure.component.html',
-  // styleUrl: './unit-of-measure.component.css',
   providers: [UnitOfMeasureService]
 })
 export class UnitOfMeasureComponent {

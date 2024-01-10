@@ -7,7 +7,6 @@ import { UnitFixtureService } from '../unit-fixture.service';
 @Component({
   selector: 'app-unit-fixture-edit',
   templateUrl: './unit-fixture-edit.component.html',
-  // styleUrl: './unit-fixture-edit.component.css'
 })
 export class UnitFixtureEditComponent {
 

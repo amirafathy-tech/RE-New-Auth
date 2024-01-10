@@ -11,14 +11,11 @@ import { UsageTypeService } from '../usage-type.service';
 })
 export class UsageTypeEditComponent {
 
-
   @ViewChild('f', { static: false }) slForm: NgForm;
   subscription: Subscription;
   editMode = false;
   editedItemIndex: number;
   editedItem: UsageType;
-
-
   constructor(private usageTypeService: UsageTypeService) { }
 
   ngOnInit() {

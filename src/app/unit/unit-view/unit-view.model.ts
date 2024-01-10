@@ -4,7 +4,5 @@ export class UnitView {
     constructor(viewId: string, viewDescr: string) {
         this.viewId = viewId;
         this.viewDescr = viewDescr;
-
     }
-
 }

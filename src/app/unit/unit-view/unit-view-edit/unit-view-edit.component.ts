@@ -7,7 +7,6 @@ import { UnitViewService } from '../unit-view.service';
 @Component({
   selector: 'app-unit-view-edit',
   templateUrl: './unit-view-edit.component.html',
-  // styleUrl: './unit-view-edit.component.css'
 })
 export class UnitViewEditComponent {
 
@@ -16,8 +15,6 @@ export class UnitViewEditComponent {
   editMode = false;
   editedItemIndex: number;
   editedItem: UnitView;
-
-
   constructor(private unitViewService: UnitViewService) { }
 
   ngOnInit() {
@@ -70,6 +67,5 @@ export class UnitViewEditComponent {
   ngOnDestroy() {
     this.subscription.unsubscribe();
   }
-
-
+  
 }

@@ -6,5 +6,4 @@ export class UsageType{
         this.usageDescr=usageDescr;
         
     }
-    
 }

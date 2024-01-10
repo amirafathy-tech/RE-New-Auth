@@ -4,7 +4,6 @@ export class UnitSubType{
     constructor(subtypeId:string,subtypeDescr:string){
         this.subtypeId=subtypeId;
         this.subtypeDescr=subtypeDescr;
-        
     }
     
 }
