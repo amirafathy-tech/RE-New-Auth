@@ -17,7 +17,6 @@
         <label for="password">Password</label>
         <input type="password" id="password" class="form-control" ngModel name="password" required minlength="6" />
       </div>
-
       <!-- Additional input fields for signup form -->
       <div *ngIf="!isLoginMode">
         <div class="form-group">
@@ -38,7 +37,6 @@
           Switch to {{ isLoginMode ? 'Sign Up' : 'Login' }}
         </button>
       </div>
-
     </form>
   </div>
 </div>
