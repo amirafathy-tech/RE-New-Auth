@@ -1,12 +1,14 @@
 import { NgModule } from '@angular/core';
 import { BrowserModule, provideClientHydration } from '@angular/platform-browser';
-import { HTTP_INTERCEPTORS, HttpClientModule } from '@angular/common/http';
+import {  HTTP_INTERCEPTORS, HttpClientModule } from '@angular/common/http';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { FundamentalNgxCoreModule } from '@fundamental-ngx/core';
+import { NgbModule } from '@ng-bootstrap/ng-bootstrap';
+import { CommonModule } from '@angular/common';
+import { NgHttpLoaderModule } from 'ng-http-loader';
 
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
-import { NgbModule } from '@ng-bootstrap/ng-bootstrap';
 import { HomeComponent } from './home/home.component';
 import { HeaderComponent } from './header/header.component';
 import { CityComponent } from './city/city.component';
@@ -58,15 +60,12 @@ import { UnitAreaEditComponent } from './unit/unit-area/unit-area-edit/unit-area
 import { AreaComponent } from './area/area.component';
 import { AreaListComponent } from './area/area-list/area-list.component';
 import { PaymentComponent } from './payment/payment.component';
-import { ShellbarSidebarComponent } from './shellbar/shellbar.component';
-import { CommonModule } from '@angular/common';
-import { NgHttpLoaderModule } from 'ng-http-loader';
 import { ModelComponent } from './model/model.component';
 import { AboutComponent } from './about/about.component';
 import { FooterComponent } from './footer/footer.component';
-import { AuthComponent } from './auth/auth.component';
+import { AuthModule } from './auth/auth.module';
 import { AuthInterceptorService } from './auth/auth-interceptor.service';
-
+// import { UnitModule } from './unit/unit.module';
 @NgModule({
   declarations: [
     AppComponent,
@@ -120,13 +119,10 @@ import { AuthInterceptorService } from './auth/auth-interceptor.service';
     AreaListComponent,
     PaymentComponent,
     ModelComponent,
-    ShellbarSidebarComponent,
     AboutComponent,
     FooterComponent,
     LoadingSpinnerComponent,
-    AuthComponent
   ],
-
   imports: [
     FundamentalNgxCoreModule,
     BrowserModule,
@@ -138,14 +134,16 @@ import { AuthInterceptorService } from './auth/auth-interceptor.service';
     SharedModule,
     HttpClientModule,
     CommonModule,
+    AuthModule,
+    // UnitModule,
     NgHttpLoaderModule.forRoot(),
   ],
   providers: [
     provideClientHydration(),
     {
-      provide: HTTP_INTERCEPTORS,
-      useClass: AuthInterceptorService,
-      multi: true
+      provide:HTTP_INTERCEPTORS,
+      useClass:AuthInterceptorService,
+      multi:true
     }
   ],
   bootstrap: [AppComponent]

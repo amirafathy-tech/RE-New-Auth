@@ -9,31 +9,39 @@
   <div class="login">
     <h2 class="login-header">{{ isLoginMode ? 'Log in' : 'Create a New Account' }}</h2>
     <form #authForm="ngForm" class="login-container" (ngSubmit)="onSubmit(authForm)" *ngIf="!isLoading">
-      <div class="form-group">
+      <div class="form-group" *ngIf="isLoginMode">
         <label for="email">E-Mail</label>
         <input type="email" id="email" class="form-control" ngModel name="email" required email />
       </div>
-      <div class="form-group">
+      <div class="form-group" *ngIf="isLoginMode">
         <label for="password">Password</label>
         <input type="password" id="password" class="form-control" ngModel name="password" required minlength="6" />
       </div>
       <!-- Additional input fields for signup form -->
       <div *ngIf="!isLoginMode">
         <div class="form-group">
-          <label for="name">Name</label>
-          <input type="text" id="name" class="form-control" ngModel name="name" required />
+          <label for="value">E-Mail</label>
+          <input type="email" id="value" class="form-control" ngModel name="value" required />
         </div>
         <div class="form-group">
-          <label for="phone">Phone</label>
-          <input type="tel" id="phone" class="form-control" ngModel name="phone" required />
+          <label for="familyName">FamilyName</label>
+          <input type="text" id="familyName" class="form-control" ngModel name="familyName" required />
+        </div>
+        <div class="form-group">
+          <label for="givenName">GivenName</label>
+          <input type="text" id="givenName" class="form-control" ngModel name="givenName" required />
+        </div>
+        <div class="form-group">
+          <label for="userName">UserName</label>
+          <input type="text" id="userName" class="form-control" ngModel name="userName" required />
         </div>
       </div>
       <div class="d-flex justify-content-center my-3">
-        <button class="btn btn-primary mx-2" type="submit" [disabled]="!authForm.valid">
+        <button class="btn  mx-2" type="submit" [disabled]="!authForm.valid">
           {{ isLoginMode ? 'Login' : 'Sign Up' }}
         </button>
 
-        <button class="btn btn-primary" (click)="onSwitchMode()" type="button">
+        <button class="btn " (click)="onSwitchMode()" type="button">
           Switch to {{ isLoginMode ? 'Sign Up' : 'Login' }}
         </button>
       </div>

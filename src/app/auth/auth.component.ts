@@ -3,7 +3,7 @@ import { NgForm } from '@angular/forms';
 import { Router } from '@angular/router';
 import { Observable } from 'rxjs';
 
-import { AuthService, AuthResponseData } from './auth.service';
+import { AuthService, AuthResponseData, AuthResponseBackend } from './auth.service';
 
 @Component({
   selector: 'app-auth',
@@ -24,31 +24,50 @@ export class AuthComponent {
     if (!form.valid) {
       return;
     }
-    const email = form.value.email;
-    const password = form.value.password;
-
+   
     let authObs: Observable<AuthResponseData>;
+    let authObsBackend: Observable<AuthResponseBackend>;
 
     this.isLoading = true;
 
     if (this.isLoginMode) {
-      authObs = this.authService.login(email, password);
+      const email = form.value.email;
+      const password = form.value.password;
+      // authObs = this.authService.login(email, password);
+      authObsBackend=this.authService.submitLogin(email, password);
+      authObsBackend.subscribe(
+        resData => {
+          console.log(resData);
+          this.isLoading = false;
+          this.router.navigate(['/about']);
+        },
+        errorMessage => {
+          console.log(errorMessage);
+          this.error = errorMessage;
+          this.isLoading = false;
+        }
+      );
     } else {
-      authObs = this.authService.signup(email, password);
+      const value = form.value.value;
+      const familyName = form.value.familyName;
+      const givenName = form.value.givenName;
+      const userName = form.value.userName;
+      // authObs = this.authService.signup(email, password);
+      this.authService.submitSignup(value,familyName,givenName,userName);
     }
 
-    authObs.subscribe(
-      resData => {
-        console.log(resData);
-        this.isLoading = false;
-        this.router.navigate(['/about']);
-      },
-      errorMessage => {
-        console.log(errorMessage);
-        this.error = errorMessage;
-        this.isLoading = false;
-      }
-    );
+    // authObsBackend.subscribe(
+    //   resData => {
+    //     console.log(resData);
+    //     this.isLoading = false;
+    //     this.router.navigate(['/about']);
+    //   },
+    //   errorMessage => {
+    //     console.log(errorMessage);
+    //     this.error = errorMessage;
+    //     this.isLoading = false;
+    //   }
+    // );
     form.reset();
   }
 }

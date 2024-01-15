@@ -23,6 +23,10 @@
   border: 12px solid transparent;
   border-bottom-color: rgb(15, 66, 107);
 }
+button{
+  background-color: rgb(12, 77, 129);
+  color: white;
+}
 
 .login-header {
   background: rgb(12, 77, 129);

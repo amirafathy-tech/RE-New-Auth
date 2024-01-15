@@ -24,7 +24,6 @@ import { BuildingAreaComponent } from './building/building-area/building-area.co
 import { UnitAreaComponent } from './unit/unit-area/unit-area.component';
 import { AreaComponent } from './area/area.component';
 import { PaymentComponent } from './payment/payment.component';
-import { ShellbarSidebarComponent } from './shellbar/shellbar.component';
 import { ModelComponent } from './model/model.component';
 import { CommonModule } from '@angular/common';
 import { AboutComponent } from './about/about.component';
@@ -59,8 +58,7 @@ const appRoutes: Routes = [
   { path: 'unit-fixture',canActivate: [AuthGuard], component: UnitFixtureComponent },
   { path: 'unit-area', canActivate: [AuthGuard],component: UnitAreaComponent },
   { path: 'home', canActivate: [AuthGuard],component: ModelComponent },
-  { path: 'auth', component: AuthComponent }
-  
+  //{ path: 'auth', component: AuthComponent }
 ];
 
 @NgModule({
