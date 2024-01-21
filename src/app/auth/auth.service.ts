@@ -129,6 +129,7 @@ export class AuthService {
         tap(resData => {
           console.log(resData.id_token);
           const user = new AuthUser(email, resData.id_token);
+          // const user = new AuthUser(email, resData.id_token,"admin");
           this.userBackend.next(user);
           localStorage.setItem('token', resData.id_token);
         })

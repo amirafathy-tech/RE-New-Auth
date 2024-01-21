@@ -32,8 +32,8 @@ import { AuthGuard } from './auth/auth.guard';
 
 const appRoutes: Routes = [
   
-  { path: 'city', canActivate: [AuthGuard],component: CityComponent },
-  { path: 'company', canActivate: [AuthGuard],component: CompanyComponent },
+  { path: 'city', canActivate: [AuthGuard],data: { role: 'admin' },component: CityComponent },
+  { path: 'company', canActivate: [AuthGuard],data: { role: 'user' },component: CompanyComponent },
   { path: '', component: AuthComponent },
   { path: 'about', component: AboutComponent },
   { path: 'payment', canActivate: [AuthGuard],component: PaymentComponent },

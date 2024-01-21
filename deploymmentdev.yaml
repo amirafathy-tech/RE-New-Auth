@@ -21,7 +21,7 @@ spec:
     spec:
       containers:
         - image: amirafathy/imgdev
-          name: condev1
+          name: condev2
           ports:
             - containerPort: 4200
           envFrom:
