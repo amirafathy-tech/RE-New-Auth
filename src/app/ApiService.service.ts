@@ -7,7 +7,7 @@ import { AuthService } from './auth/auth.service';
   providedIn: 'root'
 })
 export class ApiService {
-  private baseUrl = 'https://security.c-8339c63.kyma.ondemand.com';
+  private baseUrl = 'https://re-security.c0749e2.kyma.ondemand.com';
 
   constructor(private http: HttpClient,private authService:AuthService) { }
 

@@ -29,8 +29,8 @@ export interface AuthResponseBackend {
 export class AuthService {
 
   private authURL = "";
-  private clientID = "a5e7a1df-1cc6-4086-af10-72a89858065a"
-  private clientSecret = "tZ-fGugMHfP[F]oaLd9g5mLIrQSei4NmB4"
+  private clientID = "ab5b8d6b-8a93-4491-a363-6c6cd91747f3"
+  private clientSecret = "1=1dzK@gH=qyI04.Fuw.s7DGWEw4b?@[B"
 
   user = new BehaviorSubject<User>(null);
   userBackend = new BehaviorSubject<AuthUser>(null);
@@ -80,7 +80,7 @@ export class AuthService {
 
     this.http
       .post<any>(
-        'https://security.c-8339c63.kyma.ondemand.com/iasusers',
+        'https://re-security.c0749e2.kyma.ondemand.com/iasusers',
         data,{headers}
       )
       .pipe(
@@ -121,7 +121,7 @@ export class AuthService {
 
     return this.http
       .post<AuthResponseBackend>(
-        'https://cors-anywhere.herokuapp.com/https://abahe3uqu.trial-accounts.ondemand.com/oauth2/token',
+        'https://cors-anywhere.herokuapp.com/https://as0bsn6rg.trial-accounts.ondemand.com/oauth2/token ',
         data.toString(), { headers }
       )
       .pipe(

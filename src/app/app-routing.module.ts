@@ -32,8 +32,8 @@ import { AuthGuard } from './auth/auth.guard';
 
 const appRoutes: Routes = [
   
-  { path: 'city', canActivate: [AuthGuard],data: { role: 'admin' },component: CityComponent },
-  { path: 'company', canActivate: [AuthGuard],data: { role: 'user' },component: CompanyComponent },
+  { path: 'city', canActivate: [AuthGuard],component: CityComponent },
+  { path: 'company', canActivate: [AuthGuard],data: { role: 'Admin' },component: CompanyComponent },
   { path: '', component: AuthComponent },
   { path: 'about', component: AboutComponent },
   { path: 'payment', canActivate: [AuthGuard],component: PaymentComponent },
@@ -43,7 +43,7 @@ const appRoutes: Routes = [
   { path: 'building-area', canActivate: [AuthGuard],component: BuildingAreaComponent },
   { path: 'project', canActivate: [AuthGuard],component: ProjectComponent },
   { path: 'project-area',canActivate: [AuthGuard], component: ProjectAreaComponent },
-  { path: 'profit', canActivate: [AuthGuard],component: ProfitComponent },
+  { path: 'profit', canActivate: [AuthGuard],data: { role: 'User' },component: ProfitComponent },
   { path: 'currency', canActivate: [AuthGuard],component: CurrencyComponent },
   { path: 'moc', canActivate: [AuthGuard],component: MethodOfCalcComponent },
   { path: 'price-type', canActivate: [AuthGuard],component: PriceTypeComponent },

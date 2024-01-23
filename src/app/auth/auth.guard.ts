@@ -8,7 +8,7 @@ import {
   import { Injectable } from '@angular/core';
   import { Observable } from 'rxjs';
   import { map, tap, take } from 'rxjs/operators';
-  import { jwtDecode } from "jwt-decode";
+  import { JwtPayload, jwtDecode } from "jwt-decode";
   
   import { AuthService } from './auth.service';
   
@@ -35,18 +35,37 @@ import {
           console.log(isAuth);
 
           const token = user.token;
-const decoded = jwtDecode(token);
+let decoded: any;
+ decoded= jwtDecode(token);
+ const newdecoded = jwtDecode<JwtPayload>(token); 
+ console.log(newdecoded);
+ 
+const groups= decoded.groups;
+console.log(groups);
+
 
 console.log(decoded);
 
+console.log(JSON.stringify(decoded))
+let updecoded= JSON.stringify(decoded);
+// console.log(updecoded.groups);
+
+
+    const requiredRoles = route.data.role as string[]; // Get required roles from route data
           
           if (isAuth) {
-            // if (user.role === requiredRole) {
-            //   return true;
-            // }
-            // else{
-            //   alert('You do not have permission to access this page.');
-            // }
+            //if (user.role === requiredRole) {
+
+          if (requiredRoles && requiredRoles.length > 0) {
+           const userRoles = groups as string[]; // Get user's roles from the user object
+
+          // Check if the user has at least one of the required roles
+           const hasRequiredRole = userRoles.some(role => requiredRoles.includes(role));
+               return true;
+          }
+            else{
+              alert('You do not have permission to access this page.');
+            }
             return true;
            
           }
